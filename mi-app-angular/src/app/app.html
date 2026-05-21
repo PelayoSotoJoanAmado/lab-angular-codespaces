@@ -1,0 +1,71 @@
+<div class="contenedor">
+
+  <h1>{{ titulo }}</h1>
+
+  <section class="formulario">
+    <h2>{{ modoEdicion ? 'Editar producto' : 'Registrar producto' }}</h2>
+
+    <label>Nombre del producto</label>
+    <input 
+      type="text" 
+      [(ngModel)]="producto.nombre"
+      placeholder="Ingrese el nombre del producto">
+
+    <label>Precio</label>
+    <input 
+      type="number" 
+      [(ngModel)]="producto.precio"
+      placeholder="Ingrese el precio">
+
+    <label>Stock</label>
+    <input 
+      type="number" 
+      [(ngModel)]="producto.stock"
+      placeholder="Ingrese el stock">
+
+    <div class="botones">
+      <button (click)="guardarProducto()">
+        {{ modoEdicion ? 'Actualizar' : 'Registrar' }}
+      </button>
+
+      <button class="secundario" (click)="limpiarFormulario()">
+        Limpiar
+      </button>
+    </div>
+  </section>
+
+  <section class="tabla">
+    <h2>Listado de productos</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Producto</th>
+          <th>Precio</th>
+          <th>Stock</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let item of productos">
+          <td>{{ item.id }}</td>
+          <td>{{ item.nombre }}</td>
+          <td>S/ {{ item.precio }}</td>
+          <td>{{ item.stock }}</td>
+          <td>
+            <button class="editar" (click)="editarProducto(item)">
+              Editar
+            </button>
+
+            <button class="eliminar" (click)="eliminarProducto(item.id)">
+              Eliminar
+            </button>
+          </td>
+</tr>
+      </tbody>
+    </table>
+  </section>
+
+</div>

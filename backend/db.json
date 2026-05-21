@@ -1,0 +1,23 @@
+{
+  "productos": [
+    {
+      "id": "1",
+      "nombre": "Laptop Lenovo IdeaPad",
+      "precio": 2500,
+      "stock": 12
+    },
+    {
+      "id": "2",
+      "nombre": "Mouse Logitech",
+      "precio": 80,
+      "stock": 25
+    },
+    {
+      "id": "3",
+      "nombre": "Teclado mecánico Redragon",
+      "precio": 180,
+      "stock": 15
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
